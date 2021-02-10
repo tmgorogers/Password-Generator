@@ -1,9 +1,9 @@
 // Assignment Code
 var btn = document.querySelector("#generate");
-
+// Prompt how many characters the user would like 
 var length = Number(prompt("How many characters would you like your password to be?"));
 while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be 8 characters.", "How many characters would you like your password to be?" ));
-
+//list of characters
 var characters = "";
 
 var uppers = confirm("Would you like to use uppercase letters?");
@@ -24,7 +24,8 @@ if (lowers) characters += "qwertyuiopasdfghjklzxcvbnm";
 if (numbers) characters += "1234567890";
 if (symbols) characters += "!@#$%^&*(){}[]=<>/,.";
 
-
+// generator function with variables length and variables characters
+//loop selecting random characters from the array and return it
 function generateNewPassword(l, char) {
 
   var password = "";
@@ -46,5 +47,6 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+
 btn.addEventListener("click", writePassword);
 
